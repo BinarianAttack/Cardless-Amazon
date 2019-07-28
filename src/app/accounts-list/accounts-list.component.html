@@ -1,0 +1,17 @@
+<div class="jumbotron jumbotron-center" > 
+    <h1> Accounts Details </h1>
+</div>
+<div class="card-deck">
+    <div class="card mb3" *ngFor="let account of accounts">
+        <h3 class="card-header" > {{account.name}} </h3>
+        <img src="../assets/placeholder-card.png" style="height: 200px; display: block;" />
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"> {{account.accountId}} </li>
+            <li class="list-group-item"> {{account.name}} </li>
+            <li class="list-group-item"> {{account.balance}} </li>
+        </ul>
+        <div class="card-body" >
+            <button class="btn btn-primary stretched-link"  (click)="accountforCode(account.accountId)" > Cardless Code </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="jumbotron">
+    <h1> Withdrawal Ammount: </h1>
+    <h5> Select the ammount to withdraw from acount: {{account.name}} </h5>
+    <h5> Balance: {{account.balance}} </h5>
+</div>
+<div class="row jumbotron-center">
+    <div class="list-group" >
+        <h5 class="list-group-item list-group-item-primary"> Ammount: </h5>
+        <button class="list-group-item list-group-item-action list-group-item-dark" (click)="generateCode(50)" > $50.0 </button>
+        <button class="list-group-item list-group-item-action list-group-item-dark" (click)="generateCode(100)" > $100.0 </button>
+        <button class="list-group-item list-group-item-action list-group-item-dark" (click)="generateCode(250)"> $250.0 </button>
+        <button class="list-group-item list-group-item-action list-group-item-dark" (click)="generateCode(500)" > $500.0 </button>
+        <div class="list-group-item list-group-item-dark" >
+            <label for="customAmmount"> Custom Ammount: </label>
+            <input #customAmmount value="0" type="number" min="0" max="{{account.balance}}" step="100" />
+            <button class="btn btn-dark" (click)="generateCode(customAmmount.value)" > Withdraw </button>
+        </div>
+    </div>
+</div>
